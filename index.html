@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HemoIQ - Blood Test Analyzer</title>
+</head>
+
+<body>
+
+  <h1>🧠 HemoIQ</h1>
+  <p>Enter your blood test values for structured analysis</p>
+
+  <form id="bloodForm">
+
+    <h2>🩸 Blood Factors (CBC)</h2>
+
+    <label>Hemoglobin (g/dL)</label><br>
+    <input type="number" step="0.1" name="hemoglobin"><br><br>
+
+    <label>WBC (/µL)</label><br>
+    <input type="number" name="wbc"><br><br>
+
+    <label>Platelets (/µL)</label><br>
+    <input type="number" name="platelets"><br><br>
+
+    <label>RBC (million/µL)</label><br>
+    <input type="number" step="0.1" name="rbc"><br><br>
+
+    <label>MCV (fL)</label><br>
+    <input type="number" step="0.1" name="mcv"><br><br>
+
+    
+
+    <hr>
+    <h2>⚡ Metabolism</h2>
+
+    <label>Fasting Glucose (mg/dL)</label><br>
+    <input type="number" name="glucose"><br><br>
+
+    <label>HbA1c (%)</label><br>
+    <input type="number" step="0.1" name="hba1c"><br><br>
+
+    <label>Total Cholesterol (mg/dL)</label><br>
+    <input type="number" name="cholesterol"><br><br>
+
+    <label>Triglycerides (mg/dL)</label><br>
+    <input type="number" name="triglycerides"><br><br>
+
+    <hr>
+    <h2>🧬 Thyroid Panel</h2>
+
+    <label>TSH (µIU/mL)</label><br>
+    <input type="number" step="0.01" name="tsh"><br><br>
+
+    <label>T3 (ng/dL)</label><br>
+    <input type="number" step="0.1" name="t3"><br><br>
+
+    <label>T4 (µg/dL)</label><br>
+    <input type="number" step="0.1" name="t4"><br><br>
+
+    <hr>
+    <h2>🧪 Kidney Function (Urea & Creatinine)</h2>
+
+    <label>Blood Urea (mg/dL)</label><br>
+    <input type="number" name="urea"><br><br>
+
+    <label>Serum Creatinine (mg/dL)</label><br>
+    <input type="number" step="0.1" name="creatinine"><br><br>
+
+    <label>BUN (Blood Urea Nitrogen) (mg/dL)</label><br>
+    <input type="number" name="bun"><br><br>
+
+    <hr>
+
+    <br>
+    <button type="submit">Analyze Report</button>
+
+  </form>
+
+  <hr>
+
+  <h2>📊 Results</h2>
+  <div id="result">
+    Waiting for analysis...
+  </div>
+
+</body>
+</html>
