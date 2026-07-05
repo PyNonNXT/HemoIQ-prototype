@@ -1,6 +1,18 @@
 document.getElementById("bloodForm").addEventListener("submit", function(e) {
     e.preventDefault();
+    const sex = document.getElementById("sex");
+const pregnancySection = document.getElementById("Pregant");
 
+pregnancySection.style.display = "none";
+
+sex.addEventListener("change", () => {
+    if (sex.value === "female") {
+        pregnancySection.style.display = "block";
+    } else {
+        pregnancySection.style.display = "none";
+        document.getElementById("pregnant").value = "no";
+    }
+});
     const data = {
         hemoglobin: parseFloat(document.querySelector("[name=hemoglobin]").value),
         wbc: parseFloat(document.querySelector("[name=wbc]").value),
