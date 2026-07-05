@@ -358,16 +358,16 @@ let anemiaOfInflammation = false;
 
 // Blood Disorders
 if (haemoglobinDeficiency)
-    anemia = true;
+    report += "The patient has a haemoglobin deficiency";
 
 if (haemoglobinDeficiency && microanemia)
-    ironDeficiencyAnemia = true;
+    report += "The patient is likely suffering from Iron Deficiency. Recommended measures are to include more iron in your diet through inclusion of foods such as lean meats, leafy greens and nuts. Consult a qualified medical practitioner on whether to take iron supplements or not.";
 
 if (haemoglobinDeficiency && macroanemia)
-    macrocyticAnemia = true;
+    report += "The patient is likely suffering from Macrocytic Anemia. Causes include alcoholism, liver disease, certain medications, bone marrow disorders and vitamin B complex deficiencies. Consider getting a re-scan in 3 months time or consult a qualified medical practitioner on the same";
 
 if (haemoglobinEfficiency && rbchigh)
-    polycythemia = true;
+    report += "The patient might be suffering from polycythemia. Immediately consult a haematologist on the same";
 
 
 // Infection & Immune
