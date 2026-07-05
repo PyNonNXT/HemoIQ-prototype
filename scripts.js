@@ -318,5 +318,127 @@ else
     filler = 94038;
 };
 
+// =======================
+// Disease / Condition Flags
+// =======================
+
+let anemia = false;
+let ironDeficiencyAnemia = false;
+let macrocyticAnemia = false;
+let polycythemia = false;
+
+let possibleInfection = false;
+let inflammatoryCondition = false;
+let severeViralInfection = false;
+let autoimmuneDisorder = false;
+
+let diabetesMellitus = false;
+let prediabeticState = false;
+let hypoglycemia = false;
+let mixedDyslipidemia = false;
+let metabolicSyndrome = false;
+let cardiovascularRisk = false;
+
+let hypothyroidism = false;
+let hyperthyroidism = false;
+let subclinicalHypothyroidism = false;
+let subclinicalHyperthyroidism = false;
+
+let kidneyDysfunction = false;
+let chronicKidneyDisease = false;
+let dehydration = false;
+let diabeticKidneyDisease = false;
+
+let anemiaOfInflammation = false;
+
+
+// =======================
+// Disease Logic
+// =======================
+
+// Blood Disorders
+if (haemoglobinDeficiency)
+    anemia = true;
+
+if (haemoglobinDeficiency && microanemia)
+    ironDeficiencyAnemia = true;
+
+if (haemoglobinDeficiency && macroanemia)
+    macrocyticAnemia = true;
+
+if (haemoglobinEfficiency && rbchigh)
+    polycythemia = true;
+
+
+// Infection & Immune
+if (infection)
+    possibleInfection = true;
+
+if (infection && thrombohigh)
+    inflammatoryCondition = true;
+
+// NOTE: Only use this if you have additional evidence besides platelet count.
+if (infection && dengue)
+    severeViralInfection = true;
+
+if (autoimmune && rbclack)
+    autoimmuneDisorder = true;
+
+
+// Diabetes & Metabolism
+if (diabate || hbdiabate)
+    diabetesMellitus = true;
+
+if (prediabetes)
+    prediabeticState = true;
+
+if (hypoglacemia)
+    hypoglycemia = true;
+
+if (highcholesterol && highglycerides)
+    mixedDyslipidemia = true;
+
+if ((diabate || hbdiabate) &&
+    (highcholesterol || highglycerides))
+    metabolicSyndrome = true;
+
+if ((diabate || hbdiabate) &&
+    highcholesterol &&
+    highglycerides)
+    cardiovascularRisk = true;
+
+
+// Thyroid
+if (hypertsh && t4low)
+    hypothyroidism = true;
+
+if (hypotsh && t4high)
+    hyperthyroidism = true;
+
+if (hypertsh && !t4low && !t4high)
+    subclinicalHypothyroidism = true;
+
+if (hypotsh && !t4low && !t4high)
+    subclinicalHyperthyroidism = true;
+
+
+// Kidney
+if (creatin && bunhigh)
+    kidneyDysfunction = true;
+
+if (creatin && bunhigh && uremia)
+    chronicKidneyDisease = true;
+
+if (bunhigh && creatno)
+    dehydration = true;
+
+
+// Comorbidities
+if ((diabate || hbdiabate) && kidneyDysfunction)
+    diabeticKidneyDisease = true;
+
+if (haemoglobinDeficiency && infection)
+    anemiaOfInflammation = true;
+
     document.getElementById("result").innerHTML = report;
 });
