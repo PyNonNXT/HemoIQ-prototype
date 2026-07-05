@@ -201,120 +201,121 @@ let t4low = false;
 let t4high = false;
 let bunlow = false;
 let bunhigh = false;
-let bunlow = false;
 let creatin = false;
+let creatno = false;
 let uremia = false;
 let ureolack = false;
+let filler = 67;
 if (data.hemoglobin < ranges.hemoglobin.min)
-    report += "• Low Hemoglobin (Possible Anemia)<br>";
+    haemoglobinDeficiency = true;
 else if (data.hemoglobin > ranges.hemoglobin.max)
-    report += "• High Hemoglobin<br>";
+   haemoglobinEfficiency = true;
 else
-    report += "• Hemoglobin Normal<br>";
+    filler = 4;
 
 if (data.wbc < ranges.wbc.min)
-    report += "• Low WBC (Possible Immune Suppression)<br>";
+    suppression = true;
 else if (data.wbc > ranges.wbc.max)
-    report += "• High WBC (Possible Infection)<br>";
+    infection = true;
 else
-    report += "• WBC Normal<br>";
+    filler = 3;
 
 if (data.platelets < ranges.platelets.min)
-    report += "• Low Platelets (Possible Thrombocytopenia)<br>";
+    dengue = true;
 else if (data.platelets > ranges.platelets.max)
-    report += "• High Platelets (Possible Thrombocytosis)<br>";
+    thrombohigh = true;
 else
-    report += "• Platelets Normal<br>";
+    filler = 5;
 
 if (data.rbc < ranges.rbc.min)
-    report += "• Low RBC Count<br>";
+    rbclack = true;
 else if (data.rbc > ranges.rbc.max)
-    report += "• High RBC Count<br>";
+    rbchigh = true;
 else
-    report += "• RBC Normal<br>";
+    filler = 69;
 
 if (data.mcv < ranges.mcv.min)
-    report += "• Low MCV (Microcytic Anemia)<br>";
+    microanemia = true;
 else if (data.mcv > ranges.mcv.max)
-    report += "• High MCV (Macrocytic Anemia)<br>";
+    macroanemia = true;
 else
-    report += "• MCV Normal<br>";
+    filler = 64;
 
 if (data.glucose > ranges.glucose.max)
-    report += "• High Fasting Glucose (Diabetes Risk)<br>";
+    diabate = true;
 else if (data.glucose < ranges.glucose.min)
-    report += "• Low Blood Glucose (Hypoglycemia)<br>";
+    hypoglacemia = true;
 else
-    report += "• Glucose Normal<br>";
+    filler = 654;
 
 if (data.hba1c >= 6.5)
-    report += "• HbA1c Indicates Diabetes<br>";
+    hbdiabate = true;
 else if (data.hba1c >= 5.7)
-    report += "• HbA1c Indicates Prediabetes<br>";
+    prediabetes = true;
 else if (data.hba1c < ranges.hba1c.min)
-    report += "• HbA1c Below Normal<br>";
+    hbglycemia = true;
 else
-    report += "• HbA1c Normal<br>";
+    filler = 43;
 
 
 if (data.cholesterol > ranges.cholesterol.max)
-    report += "• High Total Cholesterol<br>";
+    highcholesterol = true;
 else
-    report += "• Cholesterol Normal<br>";
+    filler = 424;
 
 
 if (data.triglycerides > ranges.triglycerides.max)
-    report += "• High Triglycerides<br>";
+    highglycerides = true;
 else
     report += "• Triglycerides Normal<br>";
 
 
 if (data.tsh < ranges.tsh.min)
-    report += "• Low TSH (Possible Hyperthyroidism)<br>";
+    hypertsh = true;
 else if (data.tsh > ranges.tsh.max)
-    report += "• High TSH (Possible Hypothyroidism)<br>";
+    hypotsh = true;
 else
-    report += "• TSH Normal<br>";
+    filler = 654345;
 
 
 if (data.t3 < ranges.t3.min)
-    report += "• Low T3<br>";
+    t3low = true;
 else if (data.t3 > ranges.t3.max)
-    report += "• High T3<br>";
+    t3high = true;
 else
-    report += "• T3 Normal<br>";
+    fillers = 7765;
 
 
 if (data.t4 < ranges.t4.min)
-    report += "• Low T4<br>";
+    t4low = true;
 else if (data.t4 > ranges.t4.max)
-    report += "• High T4<br>";
+    t4high = true;
 else
-    report += "• T4 Normal<br>";
+    filler = 6543;
 
 
 if (data.urea < ranges.urea.min)
-    report += "• Low Blood Urea<br>";
+    ureolack = true;
 else if (data.urea > ranges.urea.max)
-    report += "• High Blood Urea<br>";
+    uremia = true
 else
-    report += "• Urea Normal<br>";
+    filler = 545434543;
 
 
 if (data.creatinine < ranges.creatinine.min)
-    report += "• Low Creatinine<br>";
+    creatno = true;
 else if (data.creatinine > ranges.creatinine.max)
-    report += "• Elevated Creatinine (Possible Kidney Dysfunction)<br>";
+    creatin = true;
 else
-    report += "• Creatinine Normal<br>";
+    filler = 85984;
 
 
 if (data.bun < ranges.bun.min)
-    report += "• Low BUN<br>";
+    bunlow = true;
 else if (data.bun > ranges.bun.max)
-    report += "• High BUN (Possible Kidney Dysfunction or Dehydration)<br>";
+    bunhigh = true;
 else
-    report += "• BUN Normal<br>";
+    filler = 94038;
 };
 
     document.getElementById("result").innerHTML = report;
