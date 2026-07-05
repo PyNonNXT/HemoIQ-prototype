@@ -176,7 +176,35 @@ const referenceRanges = {
             bun: { min: 8, max: 23 }
         }
     }
-
+let haemoglobinDeficiency = false;
+let haemoglobinEfficiency = false;
+let infection = false;
+let autoimmune = false;
+let thrombohigh = false;
+let dengue = false;
+let rbclack = false;
+let rbchigh = false;
+let macroanemia = false;
+let microanemia = false;
+let diabate = false;
+let hypoglacemia = false;
+let hbdiabate = false;
+let prediabetes = false;
+let hbglycemia = false;
+let highcholesterol = false;
+let highglycerides = false;
+let hypotsh = false;
+let hypertsh = false;
+let t3low = false;
+let t3high = false;
+let t4low = false;
+let t4high = false;
+let bunlow = false;
+let bunhigh = false;
+let bunlow = false;
+let creatin = false;
+let uremia = false;
+let ureolack = false;
 if (data.hemoglobin < ranges.hemoglobin.min)
     report += "• Low Hemoglobin (Possible Anemia)<br>";
 else if (data.hemoglobin > ranges.hemoglobin.max)
